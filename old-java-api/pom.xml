@@ -16,6 +16,14 @@
 	<description>This is a demo for a kotlin project</description>
 	<packaging>jar</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.github</groupId>
+			<artifactId>engineering-horoscope-bl</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
 		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
