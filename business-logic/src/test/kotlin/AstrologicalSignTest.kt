@@ -29,6 +29,6 @@ class AstrologicalSignTest {
 
     @Test
     fun `test from() for Frank Elstner`() {
-        assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(1973, Month.APRIL, 19)))
+        assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(1942, Month.APRIL, 19)))
     }
 }
