@@ -10,10 +10,17 @@
 		<relativePath>..</relativePath>
 	</parent>
 
-	<artifactId>engineering-horoscope-bl</artifactId>
+	<artifactId>engineering-horoscope-repo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>engineering-horoscope-bl</name>
-	<description>This is the business logic, the heart of our application, here is all the money in</description>
+	<name>engineering-horoscope-repo</name>
+	<description>This is the repository for accessing data</description>
 	<packaging>jar</packaging>
 
+	<dependencies>
+		<dependency>
+			<groupId>com.github</groupId>
+			<artifactId>engineering-horoscope-bl</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 </project>

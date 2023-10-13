@@ -13,7 +13,7 @@
 	<artifactId>engineering-horoscope-old-java-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>engineering-horoscope-old-java-api</name>
-	<description>This is a demo for a kotlin project</description>
+	<description>This is an old java api that we don't want to miss</description>
 	<packaging>jar</packaging>
 
 	<dependencies>

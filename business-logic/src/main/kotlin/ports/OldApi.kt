@@ -1,5 +1,5 @@
 package com.github.engineeringhoroscope.bl.ports
 
 interface OldApi {
-    fun test(): Boolean
+    fun isTrue(obj: Any): Boolean
 }
