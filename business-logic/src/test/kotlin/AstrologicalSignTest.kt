@@ -11,7 +11,6 @@ class AstrologicalSignTest {
         assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(2020, Month.MARCH, 21)))
         assertEquals(AstrologicalSign.Capricorn, AstrologicalSign.from(LocalDate.of(2000, Month.DECEMBER, 30)))
         assertEquals(AstrologicalSign.Sagittarius, AstrologicalSign.from(LocalDate.of(2000, Month.DECEMBER, 10)))
-        assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(1973, Month.APRIL, 19)))
     }
 
     @Test
@@ -26,5 +25,10 @@ class AstrologicalSignTest {
     @Test
     fun `test from() for Marie Curie`() {
         assertEquals(AstrologicalSign.Scorpio, AstrologicalSign.from(LocalDate.of(1867, Month.NOVEMBER, 7)))
+    }
+
+    @Test
+    fun `test from() for Frank Elstner`() {
+        assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(1973, Month.APRIL, 19)))
     }
 }
