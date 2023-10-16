@@ -1,4 +1,4 @@
-package service
+package com.github.engineeringhoroscope.bl.service
 
 import com.github.engineeringhoroscope.bl.model.AstrologicalSign
 import com.github.engineeringhoroscope.bl.model.Horoscope
@@ -8,9 +8,12 @@ interface HoroscopeService {
     fun getMonthlyHoroscope(): Any
 }
 
-class HoroscopeServiceImpl(val repository: HoroscopeRepository) : HoroscopeService {
+class HoroscopeServiceImpl(private val repository: HoroscopeRepository) : HoroscopeService {
     override fun getMonthlyHoroscope(): Horoscope {
         val shuffledProphecies = repository.getProphecies().shuffled()
+        if(shuffledProphecies.size < AstrologicalSign.values().size) {
+            throw IllegalStateException("Not enough prophecies for every sign!")
+        }
         val prophecyMap = AstrologicalSign.values().zip(shuffledProphecies).toMap()
         return Horoscope(prophecies = prophecyMap)
     }

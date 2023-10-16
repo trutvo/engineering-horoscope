@@ -7,6 +7,15 @@ import java.time.LocalDate
 import java.time.Month
 
 class AstrologicalSignTest {
+
+    @Test
+    fun testAttributes() {
+        assertEquals("Aries", AstrologicalSign.Aries.name)
+        assertEquals('♈', AstrologicalSign.Aries.symbol)
+        assertEquals(21, AstrologicalSign.Aries.startDay)
+        assertEquals(Month.MARCH, AstrologicalSign.Aries.startMonth)
+    }
+
     @Test
     fun `test from()`() {
         assertEquals(AstrologicalSign.Aries, AstrologicalSign.from(LocalDate.of(2020, Month.MARCH, 21)))

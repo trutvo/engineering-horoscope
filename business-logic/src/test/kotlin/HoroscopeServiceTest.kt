@@ -1,10 +1,12 @@
 package com.github.engineeringhoroscope.bl
 
+import com.github.engineeringhoroscope.bl.model.AstrologicalSign
 import com.github.engineeringhoroscope.bl.model.Horoscope
 import com.github.engineeringhoroscope.bl.model.Prophecy
 import com.github.engineeringhoroscope.bl.ports.HoroscopeRepository
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import service.HoroscopeServiceImpl
+import com.github.engineeringhoroscope.bl.service.HoroscopeServiceImpl
 
 class TestHoroscopeRepository(
         private var horoscopes: List<Horoscope> = ArrayList(),
@@ -23,20 +25,22 @@ class TestHoroscopeRepository(
     }
 
     override fun addHoroscope(horoscope: Horoscope) {
-        horoscopes = horoscopes + horoscope;
+        horoscopes = horoscopes + horoscope
     }
 
 }
 
 class HoroscopeServiceTest {
     @Test
-    public fun testHoroscopeCreation() {
+    fun testHoroscopeCreation() {
         val repository = TestHoroscopeRepository()
         for (i in 1..24) {
             repository.addProphecy(Prophecy(text = "prophecy $i"))
         }
         val horoscopeService = HoroscopeServiceImpl(repository)
         val horoscope = horoscopeService.getMonthlyHoroscope()
-        assert(horoscope != null)
+        AstrologicalSign.values().forEach {
+            assertTrue(horoscope.getProphecy(it).text.startsWith("prophecy "))
+        }
     }
 }
