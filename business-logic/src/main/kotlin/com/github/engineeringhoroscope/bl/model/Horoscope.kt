@@ -6,4 +6,9 @@ import java.util.*
 data class Horoscope(
         val uuid: String = UUID.randomUUID().toString(),
         val date: LocalDate = LocalDate.now(),
-        val prophecies: Map<AstrologicalSign, Prophecy>)
+        private val prophecies: Map<AstrologicalSign, Prophecy>
+) {
+    fun getProphecy(sign: AstrologicalSign): Prophecy {
+        return prophecies.getValue(sign)
+    }
+}
