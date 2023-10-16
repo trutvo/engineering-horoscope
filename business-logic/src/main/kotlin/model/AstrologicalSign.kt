@@ -1,9 +1,13 @@
-package com.github.engineeringhoroscope.bl
+package com.github.engineeringhoroscope.bl.model
 
 import java.time.LocalDate
 import java.time.Month
 
-enum class AstrologicalSign(val symbol: Char, val startDay: Int, val startMonth: Month) {
+enum class AstrologicalSign(
+        val symbol: Char,
+        val startDay: Int,
+        val startMonth: Month
+) {
     Aries('♈', 21, Month.MARCH),
     Taurus('♉', 21, Month.APRIL),
     Gemini('♊',22, Month.MAY),

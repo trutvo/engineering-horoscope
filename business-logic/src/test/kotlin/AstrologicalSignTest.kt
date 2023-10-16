@@ -1,5 +1,6 @@
 package com.github.engineeringhoroscope.bl
 
+import com.github.engineeringhoroscope.bl.model.AstrologicalSign
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.time.LocalDate
